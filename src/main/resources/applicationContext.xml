@@ -13,6 +13,10 @@
     </bean>
 
     <bean id="musicBean"
-          class="ru.alishev.spring.RockMusic">
+          class="ru.alishev.spring.ClassicalMusic">
+    </bean>
+
+    <bean id="musicPlayer" class="ru.alishev.spring.MusicPlayer">
+        <constructor-arg ref="musicBean"/>
     </bean>
 </beans>
