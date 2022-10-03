@@ -22,7 +22,7 @@
     <bean id="music3"
           class="ru.alishev.spring.JazzMusic">
     </bean>
-    <bean id="musicPlayer" class="ru.alishev.spring.MusicPlayer">
+    <bean id="musicPlayer" class="ru.alishev.spring.MusicPlayer" scope="prototype">
         <property name="musicList">
             <list>
                 <ref bean="music1"/>
