@@ -7,36 +7,5 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
-    <bean id="testBean"
-          class="ru.alishev.spring.TestBean">
-        <constructor-arg value="Neil"/>
-    </bean>
-    <bean id="musicBean"
-          class="ru.alishev.spring.ClassicalMusic"
-          init-method="doMyInit"
-          destroy-method="doMyDest"
-          factory-method="getClassicalMusic"
-    >
-    </bean>
-
-<!--
-    <bean id="music2"
-          class="ru.alishev.spring.RockMusic">
-    </bean>
-
-    <bean id="music3"
-          class="ru.alishev.spring.JazzMusic">
-    </bean>
-    <bean id="musicPlayer" class="ru.alishev.spring.MusicPlayer" scope="prototype">
-        <property name="musicList">
-            <list>
-                <ref bean="music1"/>
-                <ref bean="music2"/>
-                <ref bean="music3"/>
-            </list>
-        </property>
-        <property name="name" value="${musicPlayer.name}"/>
-        <property name="volume" value="${musicPlayer.volume}"/>
-    </bean>-->
-
+    <context:component-scan base-package="ru.alishev.spring" />
 </beans>
