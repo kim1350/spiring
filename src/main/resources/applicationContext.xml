@@ -11,10 +11,15 @@
           class="ru.alishev.spring.TestBean">
         <constructor-arg value="Neil"/>
     </bean>
-    <bean id="music1"
-          class="ru.alishev.spring.ClassicalMusic">
+    <bean id="musicBean"
+          class="ru.alishev.spring.ClassicalMusic"
+          init-method="doMyInit"
+          destroy-method="doMyDest"
+          factory-method="getClassicalMusic"
+    >
     </bean>
 
+<!--
     <bean id="music2"
           class="ru.alishev.spring.RockMusic">
     </bean>
@@ -32,5 +37,6 @@
         </property>
         <property name="name" value="${musicPlayer.name}"/>
         <property name="volume" value="${musicPlayer.volume}"/>
-    </bean>
+    </bean>-->
+
 </beans>
