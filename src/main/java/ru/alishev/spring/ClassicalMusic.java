@@ -2,6 +2,9 @@ package ru.alishev.spring;
 
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class ClassicalMusic implements Music {
     private ClassicalMusic(){}
@@ -17,9 +20,15 @@ public class ClassicalMusic implements Music {
     public void doMyDest(){
         System.out.println("do my destruction");
     }
+    private List<String> songs = new ArrayList<>();
+    {
+        songs.add("Classical Music1");
+        songs.add("Classical Music2");
+        songs.add("Classical Music3");
+    }
     @Override
-    public String getSong() {
-        return "Hungarian Rhaps";
+    public List<String> getSong() {
+        return songs;
     }
 
 }
