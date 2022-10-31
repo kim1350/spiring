@@ -8,14 +8,8 @@ import javax.annotation.PreDestroy;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
-@Scope("singleton")
 public class ClassicalMusic implements Music {
-    private ClassicalMusic(){}
 
-    public static ClassicalMusic getClassicalMusic() {
-        return new ClassicalMusic();
-    }
     @PostConstruct
     public void doMyInit() {
         System.out.println("doing my init");
